@@ -1,0 +1,135 @@
+/* Base Reset & Typography */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Cabin', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header & Top Bar */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f8f8f8;
+    padding: 10px 5%;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #eee;
+}
+
+.top-links a {
+    margin-left: 15px;
+    color: #005b96;
+    font-weight: bold;
+}
+
+.logo-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+}
+
+/* Primary Navigation */
+.primary-nav {
+    display: flex;
+    background-color: #005b96;
+    padding: 0 5%;
+}
+
+.primary-nav a {
+    color: #fff;
+    padding: 15px 20px;
+    font-weight: 700;
+    transition: background 0.3s;
+}
+
+.primary-nav a:hover {
+    background-color: #004471;
+}
+
+/* Hero Banner */
+.hero-banner {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #eef5fa;
+}
+
+.hero-banner img {
+    flex: 1 1 50%;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.mission-text {
+    flex: 1 1 50%;
+    padding: 40px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Quick Actions */
+.quick-actions {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 5%;
+    background-color: #fff;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.action-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    font-weight: bold;
+    color: #005b96;
+}
+
+/* Main Content */
+.main-content {
+    padding: 50px 5%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.main-content h1, .main-content h2 {
+    color: #005b96;
+    margin-bottom: 15px;
+}
+
+.main-content p {
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #f4f4f4;
+    border-top: 4px solid #005b96;
+}
+
+.footer-container {
+    padding: 40px 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.copyright-bar {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.85rem;
+}
