@@ -4,133 +4,161 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Coastal Pediatric Dentistry | New Bern North Carolina</title>
-    <link href="https://fonts.googleapis.com/css?family=Cabin:400,700|Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,600,700|Pacifico" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <header class="site-header">
         <div class="top-bar">
-            <div class="contact-numbers">
-                <span>Office: <a href="tel:2526330424">(252) 633-0424</a></span> | 
-                <span>Surgical: <a href="tel:2526373528">(252) 637-3528</a></span>
+            <div class="container top-bar-inner">
+                <div class="contact-numbers">
+                    <span>Office: <a href="tel:2526330424">(252) 633-0424</a></span>
+                    <span class="divider">|</span>
+                    <span>Surgical: <a href="tel:2526373528">(252) 637-3528</a></span>
+                </div>
+                <nav class="top-links">
+                    <a href="/contact-us">Appointment Request</a>
+                    <a href="mailto:info@coastalpediatricdentistry.com">Email Us</a>
+                    <a href="https://pay.balancecollect.com/m/coastalpd" target="_blank" class="btn-action">Pay Your Bill</a>
+                </nav>
             </div>
-            <nav class="top-links">
-                <a href="/contact-us">Appt Request</a>
-                <a href="mailto:info@coastalpediatricdentistry.com">Email</a>
-                <a href="https://pay.balancecollect.com/m/coastalpd" target="_blank" class="btn-pay-bill">Pay Your Bill</a>
-            </nav>
         </div>
         
-        <div class="logo-area">
-            <a href="/">
-                <img src="logo.png" alt="Coastal Pediatric Dentistry Logo" onerror="this.src='https://via.placeholder.com/250x80?text=Coastal+Pediatric+Dentistry'">
-            </a>
-            <div class="location-info">
-                <strong>New Bern</strong>
-                <address>700 McCarthy Blvd.<br>New Bern, NC 28562</address>
+        <div class="main-header">
+            <div class="container header-inner">
+                <a href="/" class="logo">
+                    <img src="logo.png" alt="Coastal Pediatric Dentistry" onerror="this.src='https://via.placeholder.com/300x90?text=Coastal+Pediatric+Dentistry'">
+                </a>
+                
+                <nav class="primary-nav">
+                    <ul class="nav-list">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/forms">Forms</a></li>
+                        
+                        <li class="has-dropdown">
+                            <a href="/office">Office ▾</a>
+                            <ul class="dropdown">
+                                <li><a href="/office/about-our-doctor">About Our Doctor</a></li>
+                                <li><a href="/office/appointment-request">Appointments</a></li>
+                                <li><a href="/office/financial">Financial</a></li>
+                                <li><a href="/office/map-directions">Map & Directions</a></li>
+                                <li><a href="/office/meet-the-staff">Meet the Staff</a></li>
+                                <li><a href="/office/office-tour">Office Tour</a></li>
+                                <li><a href="/office/policies-mission">Policies & Mission</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-dropdown">
+                            <a href="/patient">Patient ▾</a>
+                            <ul class="dropdown">
+                                <li><a href="/patient/first-visit">First Visit</a></li>
+                                <li><a href="/patient/patient-forms">Patient Forms</a></li>
+                                <li><a href="/patient/pediatric-dentistry">Pediatric Dentistry</a></li>
+                                <li><a href="/patient/oral-hygiene">Oral Hygiene</a></li>
+                                <li><a href="/patient/prevention">Prevention</a></li>
+                                <li><a href="/patient/common-problems">Common Problems</a></li>
+                                <li><a href="/patient/emergencies">Emergencies</a></li>
+                                <li><a href="/patient/f-a-q">FAQ</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-dropdown">
+                            <a href="/treatment">Treatment ▾</a>
+                            <ul class="dropdown">
+                                <li><a href="/treatment/early-dental-care">Early Dental Care</a></li>
+                                <li><a href="/treatment/tooth-whitening">Tooth Whitening</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-dropdown">
+                            <a href="/misc">Misc ▾</a>
+                            <ul class="dropdown">
+                                <li><a href="/misc/feedback">Feedback</a></li>
+                                <li><a href="/misc/glossary">Glossary</a></li>
+                                <li><a href="/misc/related-links">Related Links</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="/contact-us">Contact</a></li>
+                        <li><a href="/apply-with-us" class="nav-highlight">Apply With Us</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </header>
 
-    <nav class="primary-nav">
-        <ul class="nav-list">
-            <li><a href="/">Home</a></li>
-            <li><a href="/forms">Forms</a></li>
-            
-            <li class="has-dropdown">
-                <a href="/office">Office ▾</a>
-                <ul class="dropdown">
-                    <li><a href="/office/about-our-doctor">About Our Doctor</a></li>
-                    <li><a href="/office/appointment-request">Appointments</a></li>
-                    <li><a href="/office/financial">Financial</a></li>
-                    <li><a href="/office/map-directions">Map & Directions</a></li>
-                    <li><a href="/office/meet-the-staff">Meet the Staff</a></li>
-                    <li><a href="/office/office-tour">Office Tour</a></li>
-                    <li><a href="/office/policies-mission">Policies/Mission</a></li>
-                </ul>
-            </li>
-
-            <li class="has-dropdown">
-                <a href="/patient">Patient ▾</a>
-                <ul class="dropdown">
-                    <li><a href="/patient/common-problems">Common Problems</a></li>
-                    <li><a href="/patient/emergencies">Emergencies</a></li>
-                    <li><a href="/patient/f-a-q">FAQ</a></li>
-                    <li><a href="/patient/first-visit">First Visit</a></li>
-                    <li><a href="/patient/oral-hygiene">Oral Hygiene</a></li>
-                    <li><a href="/patient/patient-forms">Patient Forms</a></li>
-                    <li><a href="/patient/pediatric-dentistry">Pediatric Dentistry</a></li>
-                    <li><a href="/patient/prevention">Prevention</a></li>
-                </ul>
-            </li>
-
-            <li class="has-dropdown">
-                <a href="/treatment">Treatment ▾</a>
-                <ul class="dropdown">
-                    <li><a href="/treatment/early-dental-care">Early Dental Care</a></li>
-                    <li><a href="/treatment/tooth-whitening">Tooth Whitening</a></li>
-                </ul>
-            </li>
-
-            <li class="has-dropdown">
-                <a href="/misc">Misc ▾</a>
-                <ul class="dropdown">
-                    <li><a href="/misc/feedback">Feedback</a></li>
-                    <li><a href="/misc/glossary">Glossary</a></li>
-                    <li><a href="/misc/related-links">Related Links</a></li>
-                </ul>
-            </li>
-
-            <li><a href="/contact-us">Contact Us</a></li>
-            <li><a href="/apply-with-us" class="nav-highlight">Apply With Us</a></li>
-        </ul>
-    </nav>
-
     <main>
-        <section class="hero-banner reveal">
-            <img src="bannerlt1.jpg" alt="Office Interior" loading="lazy" onerror="this.src='https://via.placeholder.com/800x400?text=Office+Interior+Banner'">
-            <div class="mission-text">
-                <h2>Our Mission</h2>
-                <p>We would like to welcome your child as a new patient and thank you for the privilege of assuming the dental care of your child.</p>
-                <a href="/office/policies-mission" class="btn-read-more">Read more about Our Mission</a>
+        <section class="hero-banner">
+            <div class="hero-bg">
+                <img src="bannerlt1.jpg" alt="Coastal Pediatric Dentistry Office" loading="lazy" onerror="this.src='https://via.placeholder.com/1600x600?text=Welcoming+Office+Environment'">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="container hero-content reveal">
+                <span class="greeting">Welcome to our family</span>
+                <h1>Bright Smiles for a Bright Future</h1>
+                <p>We welcome your child as a new patient and thank you for the privilege of assuming their dental care.</p>
+                <div class="hero-buttons">
+                    <a href="/office/appointment-request" class="btn-primary">Schedule a Visit</a>
+                    <a href="/office/policies-mission" class="btn-secondary">Our Mission</a>
+                </div>
             </div>
         </section>
 
-        <section class="quick-actions reveal">
-            <a href="/office/appointment-request" class="action-card">
-                <div class="icon-circle">📅</div>
-                <span>Make an Appointment</span>
-            </a>
-            <a href="/office/map-directions" class="action-card">
-                <div class="icon-circle">📍</div>
-                <span>Map & Directions</span>
-            </a>
-            <a href="tel:2526330424" class="action-card">
-                <div class="icon-circle">📞</div>
-                <span>Call Us 252-633-0424</span>
-            </a>
+        <section class="quick-actions-bar reveal">
+            <div class="container">
+                <div class="action-grid">
+                    <a href="/office/appointment-request" class="action-card">
+                        <div class="icon-circle">📅</div>
+                        <h3>Make an Appointment</h3>
+                        <p>Request a time that works for you.</p>
+                    </a>
+                    <a href="/office/map-directions" class="action-card">
+                        <div class="icon-circle">📍</div>
+                        <h3>Map & Directions</h3>
+                        <p>Find our New Bern office easily.</p>
+                    </a>
+                    <a href="tel:2526330424" class="action-card">
+                        <div class="icon-circle">📞</div>
+                        <h3>Call Us Today</h3>
+                        <p>(252) 633-0424</p>
+                    </a>
+                </div>
+            </div>
         </section>
 
-        <section class="main-content reveal">
-            <h1>Welcome to Coastal Pediatric Dentistry!</h1>
-            <p>Coastal Pediatric Dentistry is a leading pediatric dental practice in New Bern, North Carolina. Superior oral health is vital for a child's development, and we're here to help every step of the way.</p>
-            
-            <h2>Early Dental Care</h2>
-            <p>We love children, and we have the knowledge and experience needed to provide your family with child-friendly dental care. You can rest assured that we will work hard to make sure your family's dental experiences with us are positive ones!</p>
+        <section class="intro-section reveal">
+            <div class="container intro-split">
+                <div class="intro-text">
+                    <h2 class="section-title">Welcome to Coastal Pediatric Dentistry!</h2>
+                    <p class="lead-text">Superior oral health is vital for a child's development, and we're here to help every step of the way.</p>
+                    <p>Coastal Pediatric Dentistry is a leading pediatric dental practice in New Bern, North Carolina. We love children, and we have the knowledge and experience needed to provide your family with child-friendly, early dental care.</p>
+                    <p>You can rest assured that we will work hard to make sure your family's dental experiences with us are completely positive and stress-free!</p>
+                    <a href="/office/about-our-doctor" class="text-link">Meet Our Doctor →</a>
+                </div>
+                <div class="intro-visual">
+                    <div class="image-stack">
+                        <img src="h-pediatric2.jpg" alt="Happy child at dentist" class="img-front" onerror="this.src='https://via.placeholder.com/400x500?text=Happy+Patient'">
+                        <div class="style-box"></div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section class="video-section reveal">
             <div class="container">
-                <h2>Experience Our Care</h2>
+                <div class="video-header">
+                    <span class="greeting">Take a look inside</span>
+                    <h2 class="section-title text-white">Experience Our Care</h2>
+                </div>
                 <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/U4RKTERK2nI" title="Coastal Pediatric Dentistry" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+                    <iframe src="https://www.youtube.com/embed/U4RKTERK2nI" title="Coastal Pediatric Dentistry Tour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
                 </div>
             </div>
         </section>
 
         <section class="affiliations-section reveal">
             <div class="container">
-                <h2>Professional Affiliations</h2>
+                <h2 class="section-title text-center">Professional Affiliations</h2>
                 <div class="affiliations-grid">
                     <a href="http://www.aapd.org/" target="_blank" class="affiliation-card">
                         <h3>AAPD</h3>
@@ -149,48 +177,61 @@
         </section>
     </main>
 
-    <footer>
-        <div class="footer-container">
-            <div class="footer-col">
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-widget brand-widget">
+                <img src="logo.png" alt="Coastal Pediatric Dentistry" class="footer-logo" onerror="this.src='https://via.placeholder.com/200x60?text=Coastal+Pediatric'">
+                <p>Providing exceptional, child-friendly dental care to the local community.</p>
+                <a href="/apply-with-us" class="btn-action btn-small">Apply With Us</a>
+            </div>
+            
+            <div class="footer-widget contact-widget">
                 <h3>Contact Us</h3>
                 <address>
-                    <strong>Coastal Pediatric Dentistry</strong><br>
+                    <strong>New Bern Office</strong><br>
                     700 McCarthy Blvd.<br>
                     New Bern, NC 28562<br><br>
-                    Office: <a href="tel:2526330424">(252) 633-0424</a><br>
-                    Surgical: <a href="tel:2526373528">(252) 637-3528</a>
+                    <a href="tel:2526330424">Office: (252) 633-0424</a><br>
+                    <a href="tel:2526373528">Surgical: (252) 637-3528</a>
                 </address>
             </div>
-            <div class="footer-col">
-                <h3>Office Information</h3>
-                <a href="/office/about-our-doctor">About Our Doctor</a>
-                <a href="/office/meet-the-staff">Meet the Staff</a>
-                <a href="/office/financial">Financial Information</a>
-                <a href="/office/map-directions">Map & Directions</a>
-                <a href="/office/office-tour">Take a Tour</a>
-                <a href="/apply-with-us" style="color: #34ce57; font-weight: bold; margin-top: 10px;">Apply With Us</a>
+            
+            <div class="footer-widget links-widget">
+                <h3>Office Info</h3>
+                <nav class="footer-nav">
+                    <a href="/office/about-our-doctor">About Our Doctor</a>
+                    <a href="/office/meet-the-staff">Meet the Staff</a>
+                    <a href="/office/financial">Financial Information</a>
+                    <a href="/office/map-directions">Map & Directions</a>
+                    <a href="/office/office-tour">Take a Tour</a>
+                </nav>
             </div>
-            <div class="footer-col">
+            
+            <div class="footer-widget links-widget">
                 <h3>Patient Resources</h3>
-                <a href="/patient/first-visit">Your First Visit</a>
-                <a href="/patient/patient-forms">Patient Forms</a>
-                <a href="/patient/emergencies">Dental Emergencies</a>
-                <a href="/patient/f-a-q">Frequently Asked Questions</a>
-                <a href="/misc/feedback">Leave Feedback</a>
+                <nav class="footer-nav">
+                    <a href="/patient/first-visit">Your First Visit</a>
+                    <a href="/patient/patient-forms">Patient Forms</a>
+                    <a href="/patient/emergencies">Dental Emergencies</a>
+                    <a href="/patient/f-a-q">FAQ</a>
+                    <a href="/misc/feedback">Leave Feedback</a>
+                </nav>
             </div>
         </div>
-        <div class="copyright-bar">
-            <p>2026 © All Rights Reserved | Coastal Pediatric Dentistry</p>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Coastal Pediatric Dentistry. All Rights Reserved.</p>
+            </div>
         </div>
     </footer>
 
     <script>
-        // Ensure the script runs after the document is fully parsed
         document.addEventListener("DOMContentLoaded", () => {
             const observerOptions = {
                 root: null,
                 rootMargin: "0px",
-                threshold: 0.15 
+                threshold: 0.1 
             };
 
             const observer = new IntersectionObserver((entries, observer) => {
