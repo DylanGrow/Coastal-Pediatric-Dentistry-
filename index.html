@@ -1,170 +1,426 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Coastal Pediatric Dentistry | New Bern North Carolina</title>
-    <link href="https://fonts.googleapis.com/css?family=Cabin:400,700|Pacifico" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <div class="top-bar">
-            <div class="contact-numbers">
-                <span>Office: <a href="tel:2526330424">(252) 633-0424</a></span> | 
-                <span>Surgical: <a href="tel:2526373528">(252) 637-3528</a></span>
-            </div>
-            <nav class="top-links">
-                <a href="/contact">Appt Request</a>
-                <a href="mailto:info@coastalpediatricdentistry.com">Email</a>
-                <a href="https://pay.balancecollect.com/m/coastalpd" target="_blank" class="btn-pay-bill">Pay Your Bill</a>
-            </nav>
-        </div>
-        
-        <div class="logo-area">
-            <a href="/">
-                <img src="logo.png" alt="Coastal Pediatric Dentistry Logo" onerror="this.src='https://via.placeholder.com/250x80?text=Coastal+Pediatric+Dentistry'">
-            </a>
-            <div class="location-info">
-                <strong>New Bern</strong>
-                <address>700 McCarthy Blvd.<br>New Bern, NC 28562</address>
-            </div>
-        </div>
-    </header>
+:root {
+    --primary-blue: #005b96;
+    --dark-blue: #004471;
+    --accent-green: #28a745;
+    --accent-green-hover: #218838;
+    --bg-light: #f8f8f8;
+    --bg-blue-tint: #eef5fa;
+    --text-main: #333;
+}
 
-    <nav class="primary-nav">
-        <ul class="nav-list">
-            <li><a href="/">Home</a></li>
-            <li><a href="/forms">Forms</a></li>
-            
-            <li class="has-dropdown">
-                <a href="/office">Office ▾</a>
-                <ul class="dropdown">
-                    <li><a href="/office/about-our-doctor">About Our Doctor</a></li>
-                    <li><a href="/office/meet-the-staff">Meet the Staff</a></li>
-                    <li><a href="/office/policies-mission">Policies/Mission</a></li>
-                    <li><a href="/office/financial">Financial</a></li>
-                    <li><a href="/office/map-directions">Map & Directions</a></li>
-                    <li><a href="/office/appointment-request">Appointments</a></li>
-                    <li><a href="/office/office-tour">Office Tour</a></li>
-                </ul>
-            </li>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-            <li class="has-dropdown">
-                <a href="/patient">Patient ▾</a>
-                <ul class="dropdown">
-                    <li><a href="/patient/first-visit">First Visit</a></li>
-                    <li><a href="/patient/pediatric-dentistry">Pediatric Dentistry</a></li>
-                    <li><a href="/patient/patient-forms">Patient Forms</a></li>
-                    <li><a href="/patient/f-a-q">FAQ</a></li>
-                </ul>
-            </li>
+body {
+    font-family: 'Cabin', sans-serif;
+    line-height: 1.6;
+    color: var(--text-main);
+    background-color: #fff;
+    overflow-x: hidden;
+}
 
-            <li><a href="/treatment">Treatment</a></li>
-            <li><a href="/contact-us">Contact Us</a></li>
-        </ul>
-    </nav>
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-    <main>
-        <section class="hero-banner reveal">
-            <img src="bannerlt1.jpg" alt="Office Interior" onerror="this.src='https://via.placeholder.com/800x400?text=Office+Interior+Banner'">
-            <div class="mission-text">
-                <h2>Our Mission</h2>
-                <p>We would like to welcome your child as a new patient and thank you for the privilege of assuming the dental care of your child.</p>
-                <a href="/mission" class="btn-read-more">Read more about Our Mission</a>
-            </div>
-        </section>
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
 
-        <section class="quick-actions reveal">
-            <a href="/contact" class="action-card">
-                <div class="icon-circle">📅</div>
-                <span>Make an Appointment</span>
-            </a>
-            <a href="/directions" class="action-card">
-                <div class="icon-circle">📍</div>
-                <span>Map & Directions</span>
-            </a>
-            <a href="tel:2526330424" class="action-card">
-                <div class="icon-circle">📞</div>
-                <span>Call Us 252-633-0424</span>
-            </a>
-        </section>
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
 
-        <section class="main-content reveal">
-            <h1>Welcome to Coastal Pediatric Dentistry!</h1>
-            <p>Coastal Pediatric Dentistry is a leading pediatric dental practice in New Bern, North Carolina. Superior oral health is vital for a child's development, and we're here to help every step of the way.</p>
-            
-            <h2>Early Dental Care</h2>
-            <p>We love children, and we have the knowledge and experience needed to provide your family with child-friendly dental care. You can rest assured that we will work hard to make sure your family's dental experiences with us are positive ones!</p>
-        </section>
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-        <section class="video-section reveal">
-            <div class="container">
-                <h2>Experience Our Care</h2>
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/U4RKTERK2nI" title="Coastal Pediatric Dentistry" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-            </div>
-        </section>
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-light);
+    padding: 10px 5%;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #eee;
+}
 
-        <section class="affiliations-section reveal">
-            <div class="container">
-                <h2>Professional Affiliations</h2>
-                <div class="affiliations-grid">
-                    <a href="http://www.aapd.org/" target="_blank" class="affiliation-card">
-                        <h3>AAPD</h3>
-                        <p>American Academy of Pediatric Dentistry</p>
-                    </a>
-                    <a href="http://www.abpd.org/" target="_blank" class="affiliation-card">
-                        <h3>ABPD</h3>
-                        <p>American Board of Pediatric Dentistry</p>
-                    </a>
-                    <a href="http://www.ada.org/" target="_blank" class="affiliation-card">
-                        <h3>ADA</h3>
-                        <p>American Dental Association</p>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
+.top-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
 
-    <footer>
-        <div class="footer-container">
-            <div class="footer-contact">
-                <h2>Contact Us</h2>
-                <p>We are always available to assist you with any questions or concerns.</p>
-                <address>
-                    <strong>Coastal Pediatric Dentistry</strong><br>
-                    700 McCarthy Blvd.<br>
-                    New Bern, NC 28562
-                </address>
-            </div>
-        </div>
-        <div class="copyright-bar">
-            <p>2026 © All Rights Reserved</p>
-        </div>
-    </footer>
+.top-links a:not(.btn-pay-bill) {
+    color: var(--primary-blue);
+    font-weight: bold;
+    transition: color 0.3s;
+}
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const observerOptions = {
-                root: null,
-                rootMargin: "0px",
-                threshold: 0.15 // Triggers when 15% of the element is visible
-            };
+.top-links a:hover:not(.btn-pay-bill) {
+    color: var(--dark-blue);
+}
 
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        observer.unobserve(entry.target); // Only animate once
-                    }
-                });
-            }, observerOptions);
+.btn-pay-bill {
+    background: linear-gradient(135deg, var(--accent-green), #34ce57);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: pulse-soft 2.5s infinite;
+}
 
-            const elementsToReveal = document.querySelectorAll('.reveal');
-            elementsToReveal.forEach(el => observer.observe(el));
-        });
-    </script>
-</body>
-</html>
+.btn-pay-bill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(40, 167, 69, 0.4);
+    animation: none;
+}
+
+@keyframes pulse-soft {
+    0% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(40, 167, 69, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
+}
+
+.logo-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+}
+
+.primary-nav {
+    background-color: var(--primary-blue);
+    display: flex;
+    padding: 0 5%;
+}
+
+.nav-list {
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav-list > li {
+    position: relative; 
+}
+
+.nav-list a {
+    display: block;
+    color: #fff;
+    padding: 15px 20px;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+.nav-list > li > a:hover,
+.nav-list > li:hover > a {
+    background-color: var(--dark-blue);
+}
+
+.nav-highlight {
+    background-color: var(--accent-green);
+}
+
+.nav-list > li > a.nav-highlight:hover {
+    background-color: var(--accent-green-hover);
+}
+
+.dropdown {
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background-color: #fff;
+    min-width: 220px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.has-dropdown:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown li a {
+    color: var(--text-main);
+    padding: 12px 20px;
+    font-weight: 400;
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown li a:hover {
+    background-color: var(--bg-blue-tint);
+    color: var(--primary-blue);
+}
+
+.dropdown li:last-child a {
+    border-bottom: none;
+}
+
+.hero-banner {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--bg-blue-tint);
+}
+
+.hero-banner img {
+    flex: 1 1 50%;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.mission-text {
+    flex: 1 1 50%;
+    padding: 40px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn-read-more {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--primary-blue);
+    color: white;
+    border-radius: 5px;
+    align-self: flex-start;
+    transition: background-color 0.3s;
+}
+
+.btn-read-more:hover {
+    background-color: var(--dark-blue);
+}
+
+.quick-actions {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 5%;
+    background-color: #fff;
+    border-bottom: 2px solid #f0f0f0;
+    flex-wrap: wrap;
+}
+
+.action-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    font-weight: bold;
+    color: var(--primary-blue);
+    transition: transform 0.3s ease;
+    margin: 10px;
+}
+
+.action-card:hover {
+    transform: translateY(-5px);
+}
+
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    background-color: var(--bg-blue-tint);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.main-content {
+    padding: 60px 5% 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.main-content h1, .main-content h2 {
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+}
+
+.main-content p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.video-section {
+    padding: 20px 5% 60px;
+    text-align: center;
+}
+
+.video-section h2 {
+    color: var(--primary-blue);
+    margin-bottom: 30px;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    background-color: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.affiliations-section {
+    padding: 60px 0;
+    background-color: var(--bg-light);
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.affiliations-section h2 {
+    color: var(--primary-blue);
+    margin-bottom: 40px;
+}
+
+.affiliations-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.affiliation-card {
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 10px;
+    min-width: 250px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #eaeaea;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.affiliation-card h3 {
+    color: var(--primary-blue);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.affiliation-card p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.affiliation-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 91, 150, 0.15);
+    border-color: var(--bg-blue-tint);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    border-top: 5px solid var(--primary-blue);
+}
+
+.footer-container {
+    padding: 50px 5%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-col h3 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.footer-col address {
+    font-style: normal;
+    color: #ccc;
+    line-height: 1.8;
+}
+
+.footer-col a {
+    display: block;
+    color: #ccc;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+    color: var(--accent-green);
+}
+
+.copyright-bar {
+    background-color: #222;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.85rem;
+    color: #999;
+}
+
+@media (max-width: 768px) {
+    .top-bar, .logo-area {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    .primary-nav {
+        overflow-x: auto;
+    }
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+    }
+    .dropdown {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        display: none;
+    }
+    .has-dropdown:hover .dropdown {
+        display: block;
+    }
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
