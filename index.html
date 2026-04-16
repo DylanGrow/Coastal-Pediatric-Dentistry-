@@ -1,251 +1,868 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230da2bd'%3E%3Cpath d='M17 3c-1.8 0-3.2 1.1-3.8 2.6C12.6 4.1 11.2 3 9.4 3 6.4 3 4 5.4 4 8.4v7.1c0 2.6 1.4 4.5 2.8 4.5s2.2-1.9 2.2-4.5v-2.5c0-.6.4-1 1-1s1 .4 1 1v2.5c0 2.6.8 4.5 2.2 4.5s2.8-1.9 2.8-4.5V8.4C16 5.4 13.6 3 10.6 3z'/%3E%3Cpath fill='%23ffffff' d='M15 8.5c0 2.5-2 4.5-4.5 4.5S6 11 6 8.5 8 4 10.5 4 15 6 15 8.5z' opacity='0.2'/%3E%3C/svg%3E">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Coastal Pediatric Dentistry | New Bern North Carolina</title>
-    <link href="https://fonts.googleapis.com/css?family=Cabin:400,600,700|Pacifico" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>Coastal Pediatric Dentistry | New Bern, North Carolina</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --sky: #e8f4f8;
+            --ocean: #1a6b8a;
+            --deep: #0d3d52;
+            --coral: #f07b54;
+            --sand: #fdf8f3;
+            --mint: #d6f0e8;
+            --text: #1e2d35;
+            --muted: #6b8a96;
+            --white: #ffffff;
+            --radius: 16px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--text);
+            background: var(--sand);
+            overflow-x: hidden;
+        }
+
+        /* ── TOP BAR ── */
+        .top-bar {
+            background: var(--deep);
+            color: rgba(255,255,255,0.75);
+            font-size: 0.82rem;
+            padding: 0.55rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .top-bar a { color: rgba(255,255,255,0.85); text-decoration: none; transition: color .2s; }
+        .top-bar a:hover { color: #fff; }
+        .top-bar .sep { opacity: .3; margin: 0 .5rem; }
+
+        .top-links { display: flex; align-items: center; gap: 1rem; }
+        .btn-pay {
+            background: var(--coral);
+            color: #fff !important;
+            padding: .35rem .9rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: .8rem;
+            transition: opacity .2s, transform .2s;
+        }
+        .btn-pay:hover { opacity: .9; transform: translateY(-1px); }
+
+        /* ── HEADER ── */
+        header {
+            background: var(--white);
+            border-bottom: 1px solid rgba(26,107,138,.12);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(13,61,82,.08);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .logo-block { display: flex; align-items: center; gap: 1.2rem; }
+        .logo-img {
+            height: 58px;
+            width: auto;
+        }
+        .logo-name {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.3rem;
+            line-height: 1.2;
+            color: var(--deep);
+        }
+        .logo-sub {
+            font-size: .75rem;
+            color: var(--muted);
+            margin-top: .1rem;
+            font-weight: 400;
+        }
+        .logo-divider { width: 1px; height: 36px; background: rgba(26,107,138,.2); }
+        .logo-address {
+            font-size: .78rem;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        /* ── NAV ── */
+        nav.primary {
+            background: var(--ocean);
+        }
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+        }
+        .nav-list {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0;
+            width: 100%;
+        }
+        .nav-list li { position: relative; }
+        .nav-list a {
+            display: block;
+            padding: .85rem 1.1rem;
+            color: rgba(255,255,255,.88);
+            text-decoration: none;
+            font-size: .88rem;
+            font-weight: 500;
+            letter-spacing: .01em;
+            transition: color .2s, background .2s;
+            white-space: nowrap;
+        }
+        .nav-list a:hover, .nav-list li:hover > a {
+            color: #fff;
+            background: rgba(255,255,255,.12);
+        }
+        .nav-list .nav-highlight {
+            margin-left: auto;
+            background: var(--coral);
+            color: #fff !important;
+            border-radius: 6px;
+            padding: .5rem 1rem;
+            margin-top: .2rem;
+            margin-bottom: .2rem;
+        }
+        .nav-list .nav-highlight:hover { background: #d96840 !important; }
+
+        /* dropdown */
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--white);
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 8px 30px rgba(13,61,82,.15);
+            list-style: none;
+            min-width: 210px;
+            z-index: 200;
+            overflow: hidden;
+        }
+        .has-dropdown:hover .dropdown { display: block; }
+        .dropdown a {
+            color: var(--text) !important;
+            padding: .7rem 1.2rem;
+            font-size: .85rem;
+            font-weight: 400;
+            background: transparent;
+        }
+        .dropdown a:hover {
+            background: var(--sky) !important;
+            color: var(--ocean) !important;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            background: linear-gradient(135deg, var(--deep) 0%, var(--ocean) 55%, #2a9bb8 100%);
+            position: relative;
+            overflow: hidden;
+            min-height: 480px;
+            display: flex;
+            align-items: center;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        /* Wave shape at bottom */
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0; right: 0;
+            height: 80px;
+            background: var(--sand);
+            clip-path: ellipse(55% 100% at 50% 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem 5rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            width: 100%;
+        }
+        .hero-text { }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            background: rgba(255,255,255,.15);
+            border: 1px solid rgba(255,255,255,.25);
+            color: rgba(255,255,255,.9);
+            font-size: .78rem;
+            font-weight: 600;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            padding: .35rem .85rem;
+            border-radius: 50px;
+            margin-bottom: 1.2rem;
+        }
+        .hero h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: #fff;
+            line-height: 1.15;
+            margin-bottom: 1.2rem;
+        }
+        .hero h1 em {
+            font-style: italic;
+            color: #a8dce8;
+        }
+        .hero p {
+            color: rgba(255,255,255,.8);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            max-width: 480px;
+            margin-bottom: 2rem;
+        }
+        .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn-primary {
+            background: var(--coral);
+            color: #fff;
+            padding: .85rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: .95rem;
+            text-decoration: none;
+            transition: all .25s;
+            box-shadow: 0 4px 16px rgba(240,123,84,.4);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(240,123,84,.5); }
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border: 2px solid rgba(255,255,255,.5);
+            padding: .82rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: .95rem;
+            text-decoration: none;
+            transition: all .25s;
+        }
+        .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,.1); }
+
+        /* Quick contact cards in hero */
+        .hero-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .hero-card {
+            background: rgba(255,255,255,.12);
+            border: 1px solid rgba(255,255,255,.2);
+            border-radius: var(--radius);
+            padding: 1.2rem 1.5rem;
+            backdrop-filter: blur(8px);
+            text-decoration: none;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all .25s;
+        }
+        .hero-card:hover {
+            background: rgba(255,255,255,.2);
+            transform: translateX(4px);
+        }
+        .hero-card-icon {
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
+        .hero-card strong { display: block; font-size: .95rem; font-weight: 600; }
+        .hero-card span { font-size: .82rem; opacity: .75; }
+
+        /* ── QUICK ACTIONS ── */
+        .quick-actions {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .action-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 1.8rem;
+            text-decoration: none;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: 0 2px 12px rgba(13,61,82,.07);
+            border: 1px solid rgba(26,107,138,.08);
+            transition: all .25s;
+        }
+        .action-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 28px rgba(13,61,82,.12);
+            border-color: rgba(26,107,138,.2);
+        }
+        .action-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--sky);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+        .action-card strong { display: block; font-size: .95rem; font-weight: 600; color: var(--deep); }
+        .action-card small { font-size: .8rem; color: var(--muted); }
+
+        /* ── CONTENT SECTIONS ── */
+        .section { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+        .section-label {
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--ocean);
+            margin-bottom: .6rem;
+        }
+        .section h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            color: var(--deep);
+            line-height: 1.25;
+            margin-bottom: 1rem;
+        }
+        .section p {
+            color: var(--muted);
+            line-height: 1.8;
+            font-size: .98rem;
+            max-width: 640px;
+        }
+
+        /* two-col content */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .content-visual {
+            background: linear-gradient(135deg, var(--sky) 0%, var(--mint) 100%);
+            border-radius: 24px;
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .content-visual::after {
+            content: '🦷';
+            position: absolute;
+            font-size: 8rem;
+            opacity: .08;
+            bottom: -1rem;
+            right: -1rem;
+        }
+
+        /* Features list */
+        .features {
+            list-style: none;
+            margin-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: .8rem;
+        }
+        .features li {
+            display: flex;
+            align-items: flex-start;
+            gap: .75rem;
+            font-size: .93rem;
+            color: var(--text);
+            line-height: 1.5;
+        }
+        .features li::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background: var(--ocean);
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='white'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E");
+            background-size: 12px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        /* ── VIDEO ── */
+        .video-section {
+            background: var(--deep);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        .video-section .section-label { color: rgba(255,255,255,.5); }
+        .video-section h2 {
+            font-family: 'DM Serif Display', serif;
+            color: #fff;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            margin-bottom: 2rem;
+        }
+        .video-wrapper {
+            max-width: 720px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+            box-shadow: 0 20px 60px rgba(0,0,0,.4);
+        }
+        .video-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* ── AFFILIATIONS ── */
+        .affil-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        .affil-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        .affil-card {
+            background: var(--white);
+            border: 1px solid rgba(26,107,138,.1);
+            border-radius: var(--radius);
+            padding: 2rem 1.5rem;
+            text-decoration: none;
+            color: var(--text);
+            transition: all .25s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .6rem;
+        }
+        .affil-card:hover {
+            border-color: var(--ocean);
+            box-shadow: 0 8px 28px rgba(26,107,138,.12);
+            transform: translateY(-3px);
+        }
+        .affil-badge {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.8rem;
+            color: var(--ocean);
+        }
+        .affil-card p {
+            font-size: .85rem;
+            color: var(--muted);
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--deep);
+            color: rgba(255,255,255,.7);
+            margin-top: 2rem;
+        }
+        .footer-body {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3.5rem 2rem 2.5rem;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            gap: 2.5rem;
+        }
+        .footer-col h3 {
+            font-family: 'DM Serif Display', serif;
+            color: #fff;
+            font-size: 1.05rem;
+            margin-bottom: 1.2rem;
+            font-weight: 400;
+        }
+        .footer-col address { font-style: normal; line-height: 2; font-size: .88rem; }
+        .footer-col a {
+            display: block;
+            color: rgba(255,255,255,.65);
+            text-decoration: none;
+            font-size: .88rem;
+            margin-bottom: .55rem;
+            transition: color .2s;
+        }
+        .footer-col a:hover { color: #fff; }
+        .footer-apply {
+            display: inline-block;
+            background: var(--coral);
+            color: #fff !important;
+            padding: .5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: .85rem;
+            margin-top: .5rem;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,.1);
+            padding: 1.2rem 2rem;
+            text-align: center;
+            font-size: .8rem;
+            color: rgba(255,255,255,.4);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ── REVEAL ANIMATIONS ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity .6s ease, transform .6s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+            .hero-content { grid-template-columns: 1fr; }
+            .hero-cards { flex-direction: row; flex-wrap: wrap; }
+            .hero-card { flex: 1 1 200px; }
+            .quick-actions { grid-template-columns: 1fr; }
+            .content-grid { grid-template-columns: 1fr; }
+            .affil-grid { grid-template-columns: 1fr; }
+            .footer-body { grid-template-columns: 1fr; gap: 2rem; }
+            .header-inner { flex-wrap: wrap; }
+            .logo-divider { display: none; }
+        }
+        @media (max-width: 700px) {
+            .nav-list { flex-wrap: wrap; }
+            .nav-list a { padding: .7rem .8rem; font-size: .82rem; }
+            .hero-actions { flex-direction: column; }
+            .btn-primary, .btn-outline { text-align: center; }
+            .top-bar { font-size: .75rem; }
+        }
+    </style>
 </head>
 <body>
-    <header class="site-header">
-        <div class="top-bar">
-            <div class="container top-bar-inner">
-                <div class="contact-numbers">
-                    <span>Office: <a href="tel:2526330424">(252) 633-0424</a></span>
-                    <span class="divider">|</span>
-                    <span>Surgical: <a href="tel:2526373528">(252) 637-3528</a></span>
-                </div>
-                <nav class="top-links">
-                    <a href="/contact-us">Appointment Request</a>
-                    <a href="mailto:info@coastalpediatricdentistry.com">Email Us</a>
-                    <a href="https://pay.balancecollect.com/m/coastalpd" target="_blank" class="btn-action">Pay Your Bill</a>
-                </nav>
-            </div>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div>
+            <span>Office: <a href="tel:2526330424">(252) 633-0424</a></span>
+            <span class="sep">|</span>
+            <span>Surgical: <a href="tel:2526373528">(252) 637-3528</a></span>
         </div>
-        
-        <div class="main-header">
-            <div class="container header-inner">
-                <a href="/" class="logo">
-                    <img src="logo.png" alt="Coastal Pediatric Dentistry" onerror="this.src='https://via.placeholder.com/300x90?text=Coastal+Pediatric+Dentistry'">
-                </a>
-                
-                <nav class="primary-nav">
-                    <ul class="nav-list">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/forms">Forms</a></li>
-                        
-                        <li class="has-dropdown">
-                            <a href="/office">Office ▾</a>
-                            <ul class="dropdown">
-                                <li><a href="/office/about-our-doctor">About Our Doctor</a></li>
-                                <li><a href="/office/appointment-request">Appointments</a></li>
-                                <li><a href="/office/financial">Financial</a></li>
-                                <li><a href="/office/map-directions">Map & Directions</a></li>
-                                <li><a href="/office/meet-the-staff">Meet the Staff</a></li>
-                                <li><a href="/office/office-tour">Office Tour</a></li>
-                                <li><a href="/office/policies-mission">Policies & Mission</a></li>
-                            </ul>
-                        </li>
+        <div class="top-links">
+            <a href="/contact-us">Request Appointment</a>
+            <a href="mailto:info@coastalpediatricdentistry.com">Email Us</a>
+            <a href="https://pay.balancecollect.com/m/coastalpd" target="_blank" class="btn-pay">Pay My Bill</a>
+        </div>
+    </div>
 
-                        <li class="has-dropdown">
-                            <a href="/patient">Patient ▾</a>
-                            <ul class="dropdown">
-                                <li><a href="/patient/first-visit">First Visit</a></li>
-                                <li><a href="/patient/patient-forms">Patient Forms</a></li>
-                                <li><a href="/patient/pediatric-dentistry">Pediatric Dentistry</a></li>
-                                <li><a href="/patient/oral-hygiene">Oral Hygiene</a></li>
-                                <li><a href="/patient/prevention">Prevention</a></li>
-                                <li><a href="/patient/common-problems">Common Problems</a></li>
-                                <li><a href="/patient/emergencies">Emergencies</a></li>
-                                <li><a href="/patient/f-a-q">FAQ</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="has-dropdown">
-                            <a href="/treatment">Treatment ▾</a>
-                            <ul class="dropdown">
-                                <li><a href="/treatment/early-dental-care">Early Dental Care</a></li>
-                                <li><a href="/treatment/tooth-whitening">Tooth Whitening</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="has-dropdown">
-                            <a href="/misc">Misc ▾</a>
-                            <ul class="dropdown">
-                                <li><a href="/misc/feedback">Feedback</a></li>
-                                <li><a href="/misc/glossary">Glossary</a></li>
-                                <li><a href="/misc/related-links">Related Links</a></li>
-                            </ul>
-                        </li>
-
-                        <li><a href="/contact-us">Contact</a></li>
-                        <li><a href="/apply-with-us" class="nav-highlight">Apply With Us</a></li>
-                    </ul>
-                </nav>
+    <!-- HEADER -->
+    <header>
+        <div class="header-inner">
+            <div class="logo-block">
+                <img src="logo.png" alt="Coastal Pediatric Dentistry" class="logo-img" onerror="this.style.display='none'">
+                <div>
+                    <div class="logo-name">Coastal Pediatric<br>Dentistry</div>
+                    <div class="logo-sub">New Bern, North Carolina</div>
+                </div>
+            </div>
+            <div class="logo-divider"></div>
+            <div class="logo-address">
+                700 McCarthy Blvd.<br>
+                New Bern, NC 28562
             </div>
         </div>
     </header>
 
+    <!-- PRIMARY NAV -->
+    <nav class="primary" aria-label="Main navigation">
+        <div class="nav-inner">
+            <ul class="nav-list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/forms">Forms</a></li>
+
+                <li class="has-dropdown">
+                    <a href="/office">Office ▾</a>
+                    <ul class="dropdown">
+                        <li><a href="/office/about-our-doctor">About Our Doctor</a></li>
+                        <li><a href="/office/appointment-request">Appointments</a></li>
+                        <li><a href="/office/financial">Financial</a></li>
+                        <li><a href="/office/map-directions">Map & Directions</a></li>
+                        <li><a href="/office/meet-the-staff">Meet the Staff</a></li>
+                        <li><a href="/office/office-tour">Office Tour</a></li>
+                        <li><a href="/office/policies-mission">Policies / Mission</a></li>
+                    </ul>
+                </li>
+
+                <li class="has-dropdown">
+                    <a href="/patient">Patient ▾</a>
+                    <ul class="dropdown">
+                        <li><a href="/patient/common-problems">Common Problems</a></li>
+                        <li><a href="/patient/emergencies">Emergencies</a></li>
+                        <li><a href="/patient/f-a-q">FAQ</a></li>
+                        <li><a href="/patient/first-visit">First Visit</a></li>
+                        <li><a href="/patient/oral-hygiene">Oral Hygiene</a></li>
+                        <li><a href="/patient/patient-forms">Patient Forms</a></li>
+                        <li><a href="/patient/pediatric-dentistry">Pediatric Dentistry</a></li>
+                        <li><a href="/patient/prevention">Prevention</a></li>
+                    </ul>
+                </li>
+
+                <li class="has-dropdown">
+                    <a href="/treatment">Treatment ▾</a>
+                    <ul class="dropdown">
+                        <li><a href="/treatment/early-dental-care">Early Dental Care</a></li>
+                        <li><a href="/treatment/tooth-whitening">Tooth Whitening</a></li>
+                    </ul>
+                </li>
+
+                <li class="has-dropdown">
+                    <a href="/misc">Misc ▾</a>
+                    <ul class="dropdown">
+                        <li><a href="/misc/feedback">Feedback</a></li>
+                        <li><a href="/misc/glossary">Glossary</a></li>
+                        <li><a href="/misc/related-links">Related Links</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="/contact-us">Contact Us</a></li>
+                <li><a href="/apply-with-us" class="nav-highlight">Apply With Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <main>
-        <section class="hero-banner">
-            <div class="hero-bg">
-                <img src="bannerlt1.jpg" alt="Coastal Pediatric Dentistry Office" loading="lazy" onerror="this.src='https://via.placeholder.com/1600x600?text=Welcoming+Office+Environment'">
-                <div class="hero-overlay"></div>
-            </div>
-            <div class="container hero-content reveal">
-                <span class="greeting">Welcome to our family</span>
-                <h1>Bright Smiles for a Bright Future</h1>
-                <p>We welcome your child as a new patient and thank you for the privilege of assuming their dental care.</p>
-                <div class="hero-buttons">
-                    <a href="/office/appointment-request" class="btn-primary">Schedule a Visit</a>
-                    <a href="/office/policies-mission" class="btn-secondary">Our Mission</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="quick-actions-bar reveal">
-            <div class="container">
-                <div class="action-grid">
-                    <a href="/office/appointment-request" class="action-card">
-                        <div class="icon-circle">📅</div>
-                        <h3>Make an Appointment</h3>
-                        <p>Request a time that works for you.</p>
-                    </a>
-                    <a href="/office/map-directions" class="action-card">
-                        <div class="icon-circle">📍</div>
-                        <h3>Map & Directions</h3>
-                        <p>Find our New Bern office easily.</p>
-                    </a>
-                    <a href="tel:2526330424" class="action-card">
-                        <div class="icon-circle">📞</div>
-                        <h3>Call Us Today</h3>
-                        <p>(252) 633-0424</p>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section class="intro-section reveal">
-            <div class="container intro-split">
-                <div class="intro-text">
-                    <h2 class="section-title">Welcome to Coastal Pediatric Dentistry!</h2>
-                    <p class="lead-text">Superior oral health is vital for a child's development, and we're here to help every step of the way.</p>
-                    <p>Coastal Pediatric Dentistry is a leading pediatric dental practice in New Bern, North Carolina. We love children, and we have the knowledge and experience needed to provide your family with child-friendly, early dental care.</p>
-                    <p>You can rest assured that we will work hard to make sure your family's dental experiences with us are completely positive and stress-free!</p>
-                    <a href="/office/about-our-doctor" class="text-link">Meet Our Doctor →</a>
-                </div>
-                <div class="intro-visual">
-                    <div class="image-stack">
-                        <img src="h-pediatric2.jpg" alt="Happy child at dentist" class="img-front" onerror="this.src='https://via.placeholder.com/400x500?text=Happy+Patient'">
-                        <div class="style-box"></div>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">🌊 New Bern, North Carolina</div>
+                    <h1>Dentistry that <em>kids</em> actually look forward to</h1>
+                    <p>We'd love to welcome your child as a new patient. Our team has the knowledge, experience, and warmth to make every visit a positive one — from the very first appointment.</p>
+                    <div class="hero-actions">
+                        <a href="/office/appointment-request" class="btn-primary">Make an Appointment</a>
+                        <a href="/patient/first-visit" class="btn-outline">First Visit Info</a>
                     </div>
                 </div>
+
+                <div class="hero-cards">
+                    <a href="tel:2526330424" class="hero-card">
+                        <div class="hero-card-icon">📞</div>
+                        <div>
+                            <strong>Call Our Office</strong>
+                            <span>(252) 633-0424</span>
+                        </div>
+                    </a>
+                    <a href="/office/map-directions" class="hero-card">
+                        <div class="hero-card-icon">📍</div>
+                        <div>
+                            <strong>Get Directions</strong>
+                            <span>700 McCarthy Blvd, New Bern</span>
+                        </div>
+                    </a>
+                    <a href="/patient/emergencies" class="hero-card">
+                        <div class="hero-card-icon">🚨</div>
+                        <div>
+                            <strong>Dental Emergency?</strong>
+                            <span>Surgical line: (252) 637-3528</span>
+                        </div>
+                    </a>
+                    <a href="/patient/patient-forms" class="hero-card">
+                        <div class="hero-card-icon">📋</div>
+                        <div>
+                            <strong>Patient Forms</strong>
+                            <span>Complete paperwork online</span>
+                        </div>
+                    </a>
+                </div>
             </div>
         </section>
 
+        <!-- QUICK ACTIONS -->
+        <div class="quick-actions reveal">
+            <a href="/office/appointment-request" class="action-card">
+                <div class="action-icon">📅</div>
+                <div>
+                    <strong>Make an Appointment</strong>
+                    <small>Book online or call us</small>
+                </div>
+            </a>
+            <a href="/office/map-directions" class="action-card">
+                <div class="action-icon">📍</div>
+                <div>
+                    <strong>Map &amp; Directions</strong>
+                    <small>700 McCarthy Blvd, New Bern</small>
+                </div>
+            </a>
+            <a href="tel:2526330424" class="action-card">
+                <div class="action-icon">📞</div>
+                <div>
+                    <strong>Call Us</strong>
+                    <small>(252) 633-0424</small>
+                </div>
+            </a>
+        </div>
+
+        <!-- WELCOME CONTENT -->
+        <section class="section reveal">
+            <div class="content-grid">
+                <div>
+                    <div class="section-label">Welcome</div>
+                    <h2>A leading pediatric dental practice in New Bern</h2>
+                    <p>Coastal Pediatric Dentistry is dedicated to providing superior oral health care for children at every stage of their development. We believe a healthy smile starts early — and we're here to help every step of the way.</p>
+                    <ul class="features">
+                        <li>Child-friendly environment designed to ease anxiety</li>
+                        <li>Experienced team with a passion for pediatric care</li>
+                        <li>Positive dental experiences from the very first visit</li>
+                        <li>Board-certified and affiliated with leading dental organizations</li>
+                    </ul>
+                    <div style="margin-top: 1.8rem;">
+                        <a href="/office/policies-mission" class="btn-primary">Read Our Mission</a>
+                    </div>
+                </div>
+                <div class="content-visual" aria-hidden="true">
+                    <span style="font-size: 5rem; position: relative; z-index: 1;">🦷</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- EARLY DENTAL CARE -->
+        <section class="section reveal" style="padding-top: 0;">
+            <div class="content-grid" style="direction: rtl;">
+                <div style="direction: ltr;">
+                    <div class="section-label">Treatment</div>
+                    <h2>Early Dental Care</h2>
+                    <p>We love children, and we have the knowledge and experience needed to provide your family with child-friendly dental care. You can rest assured that we will work hard to make sure your family's dental experiences with us are positive ones.</p>
+                    <div style="margin-top: 1.8rem;">
+                        <a href="/treatment/early-dental-care" class="btn-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="content-visual" aria-hidden="true" style="background: linear-gradient(135deg, #fdf0e8 0%, #fde8d8 100%);">
+                    <span style="font-size: 5rem; position: relative; z-index: 1;">😊</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIDEO -->
         <section class="video-section reveal">
-            <div class="container">
-                <div class="video-header">
-                    <span class="greeting">Take a look inside</span>
-                    <h2 class="section-title text-white">Experience Our Care</h2>
-                </div>
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/U4RKTERK2nI" title="Coastal Pediatric Dentistry Tour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-                </div>
+            <div class="section-label">Take a Look Inside</div>
+            <h2>Experience Our Care</h2>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/U4RKTERK2nI" title="Coastal Pediatric Dentistry" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
             </div>
         </section>
 
-        <section class="affiliations-section reveal">
-            <div class="container">
-                <h2 class="section-title text-center">Professional Affiliations</h2>
-                <div class="affiliations-grid">
-                    <a href="http://www.aapd.org/" target="_blank" class="affiliation-card">
-                        <h3>AAPD</h3>
-                        <p>American Academy of Pediatric Dentistry</p>
-                    </a>
-                    <a href="http://www.abpd.org/" target="_blank" class="affiliation-card">
-                        <h3>ABPD</h3>
-                        <p>American Board of Pediatric Dentistry</p>
-                    </a>
-                    <a href="http://www.ada.org/" target="_blank" class="affiliation-card">
-                        <h3>ADA</h3>
-                        <p>American Dental Association</p>
-                    </a>
-                </div>
+        <!-- AFFILIATIONS -->
+        <section class="affil-section reveal">
+            <div class="section-label">Credentials</div>
+            <h2>Professional Affiliations</h2>
+            <p style="color: var(--muted); font-size: .97rem; max-width: 500px; margin: .5rem auto 0;">We're proud to be affiliated with the leading organizations in pediatric dental care.</p>
+            <div class="affil-grid">
+                <a href="http://www.aapd.org/" target="_blank" class="affil-card">
+                    <div class="affil-badge">AAPD</div>
+                    <p>American Academy of Pediatric Dentistry</p>
+                </a>
+                <a href="http://www.abpd.org/" target="_blank" class="affil-card">
+                    <div class="affil-badge">ABPD</div>
+                    <p>American Board of Pediatric Dentistry</p>
+                </a>
+                <a href="http://www.ada.org/" target="_blank" class="affil-card">
+                    <div class="affil-badge">ADA</div>
+                    <p>American Dental Association</p>
+                </a>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="container footer-grid">
-            <div class="footer-widget brand-widget">
-                <img src="logo.png" alt="Coastal Pediatric Dentistry" class="footer-logo" onerror="this.src='https://via.placeholder.com/200x60?text=Coastal+Pediatric'">
-                <p>Providing exceptional, child-friendly dental care to the local community.</p>
-                <a href="/apply-with-us" class="btn-action btn-small">Apply With Us</a>
-            </div>
-            
-            <div class="footer-widget contact-widget">
-                <h3>Contact Us</h3>
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-body">
+            <div class="footer-col">
+                <h3>Coastal Pediatric Dentistry</h3>
                 <address>
-                    <strong>New Bern Office</strong><br>
                     700 McCarthy Blvd.<br>
                     New Bern, NC 28562<br><br>
-                    <a href="tel:2526330424">Office: (252) 633-0424</a><br>
-                    <a href="tel:2526373528">Surgical: (252) 637-3528</a>
+                    Office: <a href="tel:2526330424">(252) 633-0424</a><br>
+                    Surgical: <a href="tel:2526373528">(252) 637-3528</a><br><br>
+                    <a href="mailto:info@coastalpediatricdentistry.com">info@coastalpediatricdentistry.com</a>
                 </address>
             </div>
-            
-            <div class="footer-widget links-widget">
-                <h3>Office Info</h3>
-                <nav class="footer-nav">
-                    <a href="/office/about-our-doctor">About Our Doctor</a>
-                    <a href="/office/meet-the-staff">Meet the Staff</a>
-                    <a href="/office/financial">Financial Information</a>
-                    <a href="/office/map-directions">Map & Directions</a>
-                    <a href="/office/office-tour">Take a Tour</a>
-                </nav>
+            <div class="footer-col">
+                <h3>Office</h3>
+                <a href="/office/about-our-doctor">About Our Doctor</a>
+                <a href="/office/meet-the-staff">Meet the Staff</a>
+                <a href="/office/financial">Financial Information</a>
+                <a href="/office/map-directions">Map &amp; Directions</a>
+                <a href="/office/office-tour">Office Tour</a>
+                <a href="/apply-with-us" class="footer-apply">Apply With Us</a>
             </div>
-            
-            <div class="footer-widget links-widget">
-                <h3>Patient Resources</h3>
-                <nav class="footer-nav">
-                    <a href="/patient/first-visit">Your First Visit</a>
-                    <a href="/patient/patient-forms">Patient Forms</a>
-                    <a href="/patient/emergencies">Dental Emergencies</a>
-                    <a href="/patient/f-a-q">FAQ</a>
-                    <a href="/misc/feedback">Leave Feedback</a>
-                </nav>
+            <div class="footer-col">
+                <h3>Patients</h3>
+                <a href="/patient/first-visit">Your First Visit</a>
+                <a href="/patient/patient-forms">Patient Forms</a>
+                <a href="/patient/emergencies">Dental Emergencies</a>
+                <a href="/patient/f-a-q">FAQ</a>
+                <a href="/patient/oral-hygiene">Oral Hygiene</a>
+                <a href="/misc/feedback">Leave Feedback</a>
             </div>
         </div>
-        
         <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2026 Coastal Pediatric Dentistry. All Rights Reserved.</p>
-            </div>
+            <p>2026 &copy; All Rights Reserved &mdash; Coastal Pediatric Dentistry</p>
         </div>
     </footer>
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const observerOptions = {
-                root: null,
-                rootMargin: "0px",
-                threshold: 0.1 
-            };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    observer.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.12 });
 
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            const elementsToReveal = document.querySelectorAll('.reveal');
-            elementsToReveal.forEach(el => observer.observe(el));
-        });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
